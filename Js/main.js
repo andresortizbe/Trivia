@@ -1,5 +1,13 @@
-var questions = 'https://opentdb.com/api.php?amount=30'
+var questions = 'https://opentdb.com/api.php?amount='
 const categories = 'https://opentdb.com/api_category.php'
+var questionsQuantity;
+function getQuestions()
+{
+    questionsQuantity = document.getElementById('questions-number').value
+    console.log(document.getElementById('questions-number').value);
+    questions='https://opentdb.com/api.php?amount'+questionsQuantity;
+    console.log(questions);
+}
 
     function fetchcategorias(){
     // Se hace un fetch para imprimir las categorias y los tipos de preguntas
@@ -121,10 +129,10 @@ fetch(categories)
 
 //  funcion para imprimir preguntas segun la categoria y el tipo de la pregunta elegida
     function selecfun(){
-//  se obtine el valor seleccionado en el filtro del html categoria y se define parte de la url con la categoria
+//  se obtiene el valor seleccionado en el filtro del html categoria y se define parte de la url con la categoria
         let selecate = document.getElementById('t-categorias')
         let selecate2 = selecate.value
-        let codigocate= 'https://opentdb.com/api.php?amount=10&category=' + selecate2
+        let codigocate= 'https://opentdb.com/api.php?amount='+questionsQuantity+'&category=' + selecate2;
 
 //  se obtiene el valor seleccionado en el filtro del html para el tipo de pregunta
     let selectype = document.getElementById('t-type')
