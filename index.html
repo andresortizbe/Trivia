@@ -29,10 +29,20 @@
         <label>Selecciona la categoria de las preguntas</label><br>
         <select onchange="selecfun()" name="" id="t-categorias"></select>
         <br> <br>
+        <label>Selecciona la Dificultad</label><br>
+        <select onchange="selecfun()" name="" id="t-dificult">
+          <option value="5">Easy</option>
+          <option value="10">Medium</option>
+          <option value="15">Heavy</option>
+          
+        </select>
+
+
         <!-- aqui van los tipos de preguntas -->
         <label>Selecciona los tipos de las preguntas</label><br>
         <select onchange="selecfun()" name="" id="t-type"></select>
-    </div>
+        
+      </div>
     <!-- aqui van las preguntas y respuestas -->
    <div class="container mt-5">
          <div class="card text-white bg-dark mt-5" id="t-preguntas"></div>
