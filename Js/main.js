@@ -88,11 +88,26 @@ fetch(categories)
     //  Se genera el codigo en HTML en cada array con un map y se define en la constante "htmlquestions"
         const htmlQuestions = preguntas.map(function(pregunta) {
     //  en el caso de que el tipo de pregunta sea boolean            
-            if (pregunta.type==="boolean"){
+    var ramdomize= Math.random(0,3);
+    var arrayQuestions=[];
+    for (var i=0;i<4;i++)
+    {   if(i!=ramdomize)
+        {
+        arrayQuestions[i]=pregunta.incorrect_answers;
+        }    
+        else 
+        {
+        arrayQuestions[i]=pregunta.correct_answers;    
+        }
+    }
+    console.log(arrayQuestions);
+
+    if (pregunta.type==="boolean"){
     //  Se suma 1 al valor de temp para obtener un numero diferente en cada array
                 temp += 1
-                return `
+                return 
                 
+                `
                 <label>Question ${pregunta.type} of ${pregunta.category}:<br><b> ${pregunta.question}</b></label>
                 <p>Answer: 
                     <br>
